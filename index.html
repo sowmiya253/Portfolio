@@ -1,592 +1,964 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sowmiya Tamizhamudhan | Portfolio</title>
+    <meta charset="UTF-8">
 
-https://fonts.googleapis.com
-https://fonts.gstatic.com
-https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<style>
+    <title>Sowmiya T | Visual Designer</title>
 
-:root{
---bg:#F4EEFF;
---primary:#7C3AED;
---secondary:#A855F7;
---card:#ffffffcc;
---text:#0F172A;
---muted:#64748B;
-}
+    <link rel="stylesheet" href="style.css">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
 
-body{
-font-family:'Inter',sans-serif;
-background:var(--bg);
-color:var(--text);
-overflow-x:hidden;
-}
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
-body::before{
-content:"";
-position:fixed;
-width:500px;
-height:500px;
-background:radial-gradient(circle,#a855f755,transparent);
-bottom:-250px;
-right:-150px;
-z-index:-1;
-}
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
 
-.container{
-width:90%;
-max-width:1400px;
-margin:auto;
-}
-
-/* NAVBAR */
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-z-index:1000;
-backdrop-filter:blur(15px);
-background:rgba(244,238,255,.75);
-}
-
-.navbar{
-height:80px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-size:28px;
-font-weight:800;
-color:var(--primary);
-}
-
-.nav-links{
-display:flex;
-gap:40px;
-}
-
-.nav-links a{
-text-decoration:none;
-font-weight:600;
-color:var(--text);
-}
-
-/* HERO */
-
-.hero{
-min-height:100vh;
-padding-top:100px;
-display:grid;
-grid-template-columns:1fr 1fr;
-align-items:center;
-gap:50px;
-}
-
-.hero h1{
-font-size:88px;
-line-height:.95;
-font-family:Poppins,sans-serif;
-}
-
-.highlight{
-background:linear-gradient(135deg,#7C3AED,#A855F7);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.subtitle{
-margin-top:40px;
-font-size:28px;
-max-width:620px;
-line-height:1.5;
-color:#334155;
-}
-
-.button{
-display:inline-block;
-margin-top:40px;
-padding:18px 35px;
-background:linear-gradient(135deg,#7C3AED,#A855F7);
-color:white;
-text-decoration:none;
-font-weight:600;
-border-radius:16px;
-transition:.3s;
-}
-
-.button:hover{
-transform:translateY(-5px);
-}
-
-/* DASHBOARD */
-
-.dashboard{
-display:grid;
-gap:20px;
-}
-
-.row{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
-}
-
-.card{
-background:var(--card);
-border-radius:28px;
-padding:28px;
-backdrop-filter:blur(15px);
-box-shadow:0 15px 30px rgba(124,58,237,.08);
-}
-
-.metric{
-font-size:50px;
-font-weight:800;
-margin-top:10px;
-}
-
-.chart-card{
-height:180px;
-}
-
-.bars{
-height:110px;
-display:flex;
-align-items:flex-end;
-gap:10px;
-margin-top:15px;
-}
-
-.bar{
-flex:1;
-border-radius:10px 10px 0 0;
-background:linear-gradient(180deg,#A855F7,#7C3AED);
-}
-
-.line-card{
-height:270px;
-}
-
-svg{
-width:100%;
-height:180px;
-}
-
-/* SECTION */
-
-section{
-padding:120px 0;
-}
-
-.section-title{
-text-align:center;
-font-size:52px;
-font-family:Poppins,sans-serif;
-margin-bottom:60px;
-}
-
-.grid{
-display:grid;
-gap:25px;
-}
-
-.about-grid{
-grid-template-columns:1fr 1fr;
-}
-
-.project-grid{
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-}
-
-.project{
-background:white;
-border-radius:25px;
-padding:30px;
-box-shadow:0 10px 25px rgba(0,0,0,.04);
-transition:.3s;
-}
-
-.project:hover{
-transform:translateY(-10px);
-}
-
-.project-no{
-font-size:40px;
-font-weight:800;
-color:var(--primary);
-}
-
-.badge{
-display:inline-block;
-margin-top:10px;
-background:#ede9fe;
-color:#6d28d9;
-padding:8px 14px;
-border-radius:20px;
-font-size:13px;
-font-weight:600;
-}
-
-.skills{
-display:flex;
-flex-wrap:wrap;
-gap:15px;
-justify-content:center;
-}
-
-.skill{
-padding:15px 20px;
-background:white;
-border-radius:50px;
-font-weight:600;
-}
-
-.timeline{
-display:grid;
-gap:20px;
-max-width:900px;
-margin:auto;
-}
-
-/* CONTACT */
-
-.contact{
-text-align:center;
-}
-
-.contact p{
-margin:10px 0;
-}
-
-/* FOOTER */
-
-footer{
-padding:70px 20px;
-text-align:center;
-background:#e9ddff;
-}
-
-footer h2{
-margin-bottom:15px;
-}
-
-/* MOBILE */
-
-@media(max-width:1000px){
-
-.hero{
-grid-template-columns:1fr;
-}
-
-.hero h1{
-font-size:58px;
-}
-
-.subtitle{
-font-size:22px;
-}
-
-.about-grid{
-grid-template-columns:1fr;
-}
-
-.nav-links{
-display:none;
-}
-
-}
-
-</style>
 </head>
+
 
 <body>
 
-<nav>
-<div class="container navbar">
 
-<div class="logo">Sowmiya T ✦</div>
+<!-- ================= NAVIGATION ================= -->
 
-<div class="nav-links">
-#aboutAbout</a>
-#projectsWork</a>
-#skillsSkills</a>
-#contactContact</a>
-</div>
+<nav class="navbar">
 
-</div>
+    <a href="#" class="logo">
+        SOWMIYA<span>.</span>
+    </a>
+
+
+    <div class="nav-links">
+
+        <a href="#about">About</a>
+
+        <a href="#experience">Experience</a>
+
+        <a href="#projects">Projects</a>
+
+        <a href="#skills">Skills</a>
+
+        <a href="#contact">Contact</a>
+
+    </div>
+
 </nav>
 
-<div class="container">
+
+
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
-<div>
+    <div class="hero-content">
 
-<h1>
-VISUAL DESIGNER<br>
-<span class="highlight">DATA VISUALIZATION</span><br>
-DATA ANALYST
-</h1>
+        <p class="eyebrow">
+            HELLO, I'M
+        </p>
 
-<p class="subtitle">
-Turning complex data into clear, meaningful and visually engaging experiences.
-</p>
 
-#projects
-View Projects →
-</a>
+        <h1>
+            Sowmiya T
+        </h1>
 
-</div>
 
-<div class="dashboard">
+        <h2>
+            Visual Designer
+        </h2>
 
-<div class="row">
 
-<div class="card">
-<h4>EXPERIENCE</h4>
-<div class="metric">2+</div>
-<p>Years</p>
-</div>
+        <p class="hero-role">
 
-<div class="card">
-<h4>PROJECTS</h4>
-<div class="metric">5+</div>
-<p>Dashboards</p>
-</div>
+            Dashboard Design • Data Visualization •
+            Digital Experiences
 
-</div>
+        </p>
 
-<div class="card chart-card">
 
-<h4>HEALTHCARE RECORDS ANALYZED</h4>
-<div class="metric">18K+</div>
+        <p class="hero-description">
 
-<div class="bars">
-<div class="bar" style="height:40%"></div>
-<div class="bar" style="height:70%"></div>
-<div class="bar" style="height:55%"></div>
-<div class="bar" style="height:90%"></div>
-<div class="bar" style="height:100%"></div>
-</div>
+            I combine analytical thinking and visual design
+            to transform complex information into clear,
+            intuitive and visually engaging digital experiences.
 
-</div>
+        </p>
 
-<div class="card line-card">
 
-<h4>PERFORMANCE TREND</h4>
+        <div class="hero-buttons">
 
-<svg viewBox="0 0 600 200">
+            <a href="#projects" class="primary-btn">
 
-<path
-d="M0 140 C70 100,120 120,180 90 S300 70,360 100 S450 40,600 60"
-fill="none"
-stroke="#7C3AED"
-stroke-width="6"
-/>
+                View My Work
 
-</svg>
+            </a>
 
-</div>
 
-</div>
+            <a href="#contact" class="secondary-btn">
 
-</section>
+                Let's Connect
 
-</div>
+            </a>
 
-<section id="about">
+        </div>
 
-<div class="container">
+    </div>
 
-<h2 class="section-title">About Me</h2>
 
-<div class="grid about-grid">
 
-<div class="card">
+    <!-- HERO DESIGN CARD -->
 
-<h3>Hello, I'm Sowmiya.</h3>
-<br>
+    <div class="hero-visual">
 
-<p>
-I’m a Visual Designer and Data Analyst with experience in healthcare operations, dashboard design, reporting and analytics.
-My goal is to make complex information easier to understand through thoughtful design and meaningful visualizations.
-</p>
+        <div class="profile-card">
 
-</div>
+            <div class="initials">
+                ST
+            </div>
 
-<div class="card">
 
-<h3>Education</h3>
-<br>
+            <p class="small-title">
+                VISUAL DESIGNER
+            </p>
 
-<p><strong>B.E Electronics & Communication Engineering</strong></p>
-<p>M.I.E.T Engineering College, Trichy</p>
-<p>2019 – 2023</p>
-<p>CGPA: 8.94</p>
 
-<br>
+            <h3>
+                Designing clarity
+                from complexity.
+            </h3>
 
-<p>
-Understand → Analyze → Design → Visualize → Improve
-</p>
 
-</div>
+            <div class="design-tags">
 
-</div>
+                <span>UI Design</span>
 
-</div>
+                <span>Power BI</span>
+
+                <span>Web</span>
+
+                <span>Data</span>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
-<section id="skills">
 
-<div class="container">
 
-<h2 class="section-title">Skills</h2>
+<!-- ================= ABOUT ================= -->
 
-<div class="skills">
+<section id="about" class="section">
 
-<span class="skill">Power BI</span>
-<span class="skill">SQL</span>
-<span class="skill">Python</span>
-<span class="skill">Excel</span>
-<span class="skill">Figma</span>
-<span class="skill">UI/UX</span>
-<span class="skill">Data Visualization</span>
-<span class="skill">Canva</span>
-<span class="skill">Tableau</span>
-<span class="skill">DAX</span>
+    <div class="section-heading">
 
-</div>
+        <p>ABOUT ME</p>
 
-</div>
+        <h2>
+            Visual thinking meets
+            analytical problem solving.
+        </h2>
 
-</section>
+    </div>
 
-<section id="projects">
 
-<div class="container">
+    <div class="about-grid">
 
-<h2 class="section-title">Selected Work</h2>
+        <div class="about-card">
 
-<div class="grid project-grid">
+            <p>
 
-<div class="project">
-<div class="project-no">01</div>
-<h3>Healthcare Revenue Cycle Dashboard</h3>
-<div class="badge">Power BI • SQL • DAX</div>
-</div>
+                I am a Visual Designer with experience in
+                data visualization, dashboard design,
+                web development and business-focused
+                digital experiences.
 
-<div class="project">
-<div class="project-no">02</div>
-<h3>Claims & Denial Analysis</h3>
-<div class="badge">Power BI • SQL</div>
-</div>
+            </p>
 
-<div class="project">
-<div class="project-no">03</div>
-<h3>Healthcare Operations Dashboard</h3>
-<div class="badge">Power BI • Excel</div>
-</div>
 
-<div class="project">
-<div class="project-no">04</div>
-<h3>E-Commerce Sales Dashboard</h3>
-<div class="badge">Power BI • DAX</div>
-</div>
+            <p>
 
-<div class="project">
-<div class="project-no">05</div>
-<h3>Executive KPI Dashboard</h3>
-<div class="badge">Figma • Power BI</div>
-</div>
+                My background in Data Analytics, Salesforce
+                and Web Development helps me understand both
+                the information behind a product and the
+                visual experience presented to users.
 
-</div>
+            </p>
 
-</div>
+        </div>
+
+
+        <div class="stat-card">
+
+            <h3>100K+</h3>
+
+            <p>
+                Records analyzed
+            </p>
+
+
+            <h3>10+</h3>
+
+            <p>
+                Power BI dashboards
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
-<section>
 
-<div class="container">
 
-<h2 class="section-title">Experience</h2>
+<!-- ================= EXPERIENCE ================= -->
 
-<div class="timeline">
+<section id="experience" class="section experience-section">
 
-<div class="card">
-<h3>Data Analyst • Omega Healthcare</h3>
-<p>May 2024 – Present</p>
-</div>
+    <div class="section-heading">
 
-<div class="card">
-<h3>Service Delivery Associate / Project Coordination • QR Solutions</h3>
-<p>Dec 2023 – Mar 2024</p>
-</div>
+        <p>EXPERIENCE</p>
 
-</div>
+        <h2>
+            Professional Journey
+        </h2>
 
-</div>
+    </div>
+
+
+
+    <div class="timeline">
+
+
+        <!-- OMEGA -->
+
+        <div class="timeline-card">
+
+            <div class="timeline-dot"></div>
+
+
+            <div class="timeline-content">
+
+                <span class="timeline-date">
+
+                    MAY 2024 – PRESENT
+
+                </span>
+
+
+                <h3>
+                    Omega Healthcare
+                </h3>
+
+
+                <h4>
+                    Data Analyst
+                </h4>
+
+
+                <p>
+
+                    Working with healthcare operational data,
+                    Power BI dashboards and data-driven
+                    reporting to improve efficiency and
+                    decision-making.
+
+                </p>
+
+
+                <div class="experience-skills">
+
+                    <span>Power BI</span>
+
+                    <span>SQL</span>
+
+                    <span>Python</span>
+
+                    <span>Data Visualization</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SPARKS -->
+
+        <div class="timeline-card">
+
+            <div class="timeline-dot"></div>
+
+
+            <div class="timeline-content">
+
+                <span class="timeline-date">
+
+                    APR 2024 – MAY 2024
+
+                </span>
+
+
+                <h3>
+                    The Sparks Foundation
+                </h3>
+
+
+                <h4>
+                    Web Development Intern
+                </h4>
+
+
+                <p>
+
+                    Designed webpages and interactive
+                    web experiences using HTML, CSS
+                    and JavaScript with emphasis on
+                    usability and visual presentation.
+
+                </p>
+
+
+                <div class="experience-skills">
+
+                    <span>HTML</span>
+
+                    <span>CSS</span>
+
+                    <span>JavaScript</span>
+
+                    <span>UI Design</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SALESFORCE -->
+
+        <div class="timeline-card">
+
+            <div class="timeline-dot"></div>
+
+
+            <div class="timeline-content">
+
+                <span class="timeline-date">
+
+                    DEC 2023 – MAR 2024
+
+                </span>
+
+
+                <h3>
+                    QR Solution
+                </h3>
+
+
+                <h4>
+                    Service Delivery Associate
+                </h4>
+
+
+                <p>
+
+                    Worked with Salesforce dashboards,
+                    reports and CRM data to support
+                    business reporting and service
+                    delivery operations.
+
+                </p>
+
+
+                <div class="experience-skills">
+
+                    <span>Salesforce</span>
+
+                    <span>CRM</span>
+
+                    <span>Reports</span>
+
+                    <span>Dashboards</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
 
 </section>
 
-<section id="contact">
 
-<div class="container contact">
 
-<h2 class="section-title">Let's Connect</h2>
+<!-- ================= PROJECTS ================= -->
 
-<p>Have a project, opportunity or idea?</p>
-<p>Let's create something meaningful.</p>
+<section id="projects" class="section">
 
-<br>
+    <div class="section-heading">
 
-<p><strong>LinkedIn</strong></p>
-<p>linkedin.com/in/sowmiya-tamizhamudhan-2971b4192</p>
+        <p>FEATURED WORK</p>
 
-<br>
+        <h2>
+            Projects connected
+            to my experience.
+        </h2>
 
-<p><strong>Location</strong></p>
-<p>Bangalore, Karnataka, India</p>
+    </div>
 
-<br>
 
-<p><strong>Email</strong></p>
-<p>your-email@example.com</p>
 
-</div>
+    <div class="projects-grid">
+
+
+        <!-- PROJECT 1 -->
+
+        <article class="project-card">
+
+            <div class="project-image healthcare-image">
+
+                <div class="fake-dashboard">
+
+                    <div class="dashboard-header"></div>
+
+
+                    <div class="dashboard-row">
+
+                        <div></div>
+
+                        <div></div>
+
+                        <div></div>
+
+                    </div>
+
+
+                    <div class="chart"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+                <span class="project-number">
+                    01
+                </span>
+
+
+                <p class="project-type">
+
+                    DATA VISUALIZATION
+
+                </p>
+
+
+                <h3>
+                    Healthcare Operations Dashboard
+                </h3>
+
+
+                <p>
+
+                    Designed a healthcare-focused dashboard
+                    presenting operational KPIs, turnaround
+                    metrics and performance trends.
+
+                </p>
+
+
+                <p class="connection">
+
+                    <strong>Experience Connection:</strong>
+
+                    Omega Healthcare — Data Analyst
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span>Power BI</span>
+
+                    <span>Dashboard UX</span>
+
+                    <span>KPI Design</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- PROJECT 2 -->
+
+        <article class="project-card">
+
+            <div class="project-image snack-image">
+
+                <div class="phone-ui">
+
+                    <div class="phone-header">
+
+                        SNACK
+                        <br>
+                        POINT
+
+                    </div>
+
+
+                    <div class="food-card">
+
+                        🍔
+
+                    </div>
+
+
+                    <div class="food-lines">
+
+                        <div></div>
+
+                        <div></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+                <span class="project-number">
+                    02
+                </span>
+
+
+                <p class="project-type">
+
+                    UI / WEB DESIGN
+
+                </p>
+
+
+                <h3>
+                    Snack Point
+                </h3>
+
+
+                <p>
+
+                    Designed a food ordering experience
+                    with intuitive navigation, clean layouts
+                    and consistent visual hierarchy.
+
+                </p>
+
+
+                <p class="connection">
+
+                    <strong>Experience Connection:</strong>
+
+                    Web Development & UI Experience
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span>UI Design</span>
+
+                    <span>HTML</span>
+
+                    <span>CSS</span>
+
+                    <span>JavaScript</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- PROJECT 3 -->
+
+        <article class="project-card">
+
+            <div class="project-image salesforce-image">
+
+                <div class="crm-ui">
+
+                    <div class="crm-sidebar"></div>
+
+
+                    <div class="crm-content">
+
+                        <div class="crm-title"></div>
+
+                        <div class="crm-chart"></div>
+
+                        <div class="crm-cards">
+
+                            <div></div>
+
+                            <div></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+                <span class="project-number">
+                    03
+                </span>
+
+
+                <p class="project-type">
+
+                    CRM DASHBOARD DESIGN
+
+                </p>
+
+
+                <h3>
+                    Salesforce Reporting Dashboard
+                </h3>
+
+
+                <p>
+
+                    Created a business-focused dashboard
+                    concept for presenting CRM reports,
+                    service metrics and operational data.
+
+                </p>
+
+
+                <p class="connection">
+
+                    <strong>Experience Connection:</strong>
+
+                    QR Solution — Salesforce
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span>Salesforce</span>
+
+                    <span>CRM</span>
+
+                    <span>Reports</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- PROJECT 4 -->
+
+        <article class="project-card">
+
+            <div class="project-image analytics-image">
+
+                <div class="analytics-dashboard">
+
+                    <div class="analytics-cards">
+
+                        <div></div>
+
+                        <div></div>
+
+                        <div></div>
+
+                    </div>
+
+
+                    <div class="analytics-chart"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+                <span class="project-number">
+                    04
+                </span>
+
+
+                <p class="project-type">
+
+                    DATA ANALYTICS
+
+                </p>
+
+
+                <h3>
+                    Sales Performance Dashboard
+                </h3>
+
+
+                <p>
+
+                    Visualized revenue, profit,
+                    customer segments and regional
+                    performance using interactive KPIs
+                    and charts.
+
+                </p>
+
+
+                <p class="connection">
+
+                    <strong>Experience Connection:</strong>
+
+                    Data Analytics & Power BI Skills
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span>Power BI</span>
+
+                    <span>KPIs</span>
+
+                    <span>Analytics</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
 
 </section>
+
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills" class="section skills-section">
+
+    <div class="section-heading">
+
+        <p>SKILLS</p>
+
+        <h2>
+            Tools I use to create.
+        </h2>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+
+        <div class="skill-card">
+
+            <span>01</span>
+
+            <h3>Visual Design</h3>
+
+            <p>
+
+                Layout, Typography,
+                Color Theory, Hierarchy
+                and Composition.
+
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <span>02</span>
+
+            <h3>UI / UX</h3>
+
+            <p>
+
+                Wireframing, Information
+                Architecture, Responsive
+                Design and Usability.
+
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <span>03</span>
+
+            <h3>Data Visualization</h3>
+
+            <p>
+
+                Power BI, Tableau,
+                Excel, KPI Design
+                and Dashboards.
+
+            </p>
+
+        </div>
+
+
+        <div class="skill-card">
+
+            <span>04</span>
+
+            <h3>Web</h3>
+
+            <p>
+
+                HTML, CSS and JavaScript
+                for responsive websites.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section class="section">
+
+    <div class="education-card">
+
+        <p>EDUCATION</p>
+
+
+        <h2>
+            B.E. Electronics &
+            Communication Engineering
+        </h2>
+
+
+        <h3>
+            M.I.E.T Engineering College, Trichy
+        </h3>
+
+
+        <div class="education-details">
+
+            <span>CGPA 8.9</span>
+
+            <span>2019 – 2023</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="contact-section">
+
+    <p>GET IN TOUCH</p>
+
+
+    <h2>
+        Let's create something
+        meaningful.
+    </h2>
+
+
+    <p>
+
+        Interested in Visual Design,
+        Dashboard Design or Digital Experiences?
+
+    </p>
+
+
+    <div class="contact-buttons">
+
+        <a href="mailto:sowmiyatamizhamudhan@gmail.com">
+
+            Email Me
+
+        </a>
+
+
+        <a href="https://linkedin.com/in/sowmiya-t"
+            target="_blank">
+
+            LinkedIn
+
+        </a>
+
+
+        <a href="https://github.com/sowmiya253"
+            target="_blank">
+
+            GitHub
+
+        </a>
+
+    </div>
+
+</section>
+
+
 
 <footer>
 
-<h2>Sowmiya Tamizhamudhan</h2>
-
-<p>Visual Designer • Data Visualization • Data Analyst</p>
-
-<br>
-
-<p>
-Designing clarity through data and visual thinking.
-</p>
+    <p>
+        © 2026 Sowmiya T • Visual Designer
+    </p>
 
 </footer>
 
+
+<script src="script.js"></script>
+
+
 </body>
+
 </html>
