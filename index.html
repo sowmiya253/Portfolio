@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sowmiya Tamizhamudhan | Portfolio</title>
+
+https://fonts.googleapis.com
+https://fonts.gstatic.com
+https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap
+
+<style>
+
+:root{
+--bg:#F4EEFF;
+--primary:#7C3AED;
+--secondary:#A855F7;
+--card:#ffffffcc;
+--text:#0F172A;
+--muted:#64748B;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+background:radial-gradient(circle,#a855f755,transparent);
+bottom:-250px;
+right:-150px;
+z-index:-1;
+}
+
+.container{
+width:90%;
+max-width:1400px;
+margin:auto;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+backdrop-filter:blur(15px);
+background:rgba(244,238,255,.75);
+}
+
+.navbar{
+height:80px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:28px;
+font-weight:800;
+color:var(--primary);
+}
+
+.nav-links{
+display:flex;
+gap:40px;
+}
+
+.nav-links a{
+text-decoration:none;
+font-weight:600;
+color:var(--text);
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+padding-top:100px;
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:50px;
+}
+
+.hero h1{
+font-size:88px;
+line-height:.95;
+font-family:Poppins,sans-serif;
+}
+
+.highlight{
+background:linear-gradient(135deg,#7C3AED,#A855F7);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+margin-top:40px;
+font-size:28px;
+max-width:620px;
+line-height:1.5;
+color:#334155;
+}
+
+.button{
+display:inline-block;
+margin-top:40px;
+padding:18px 35px;
+background:linear-gradient(135deg,#7C3AED,#A855F7);
+color:white;
+text-decoration:none;
+font-weight:600;
+border-radius:16px;
+transition:.3s;
+}
+
+.button:hover{
+transform:translateY(-5px);
+}
+
+/* DASHBOARD */
+
+.dashboard{
+display:grid;
+gap:20px;
+}
+
+.row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.card{
+background:var(--card);
+border-radius:28px;
+padding:28px;
+backdrop-filter:blur(15px);
+box-shadow:0 15px 30px rgba(124,58,237,.08);
+}
+
+.metric{
+font-size:50px;
+font-weight:800;
+margin-top:10px;
+}
+
+.chart-card{
+height:180px;
+}
+
+.bars{
+height:110px;
+display:flex;
+align-items:flex-end;
+gap:10px;
+margin-top:15px;
+}
+
+.bar{
+flex:1;
+border-radius:10px 10px 0 0;
+background:linear-gradient(180deg,#A855F7,#7C3AED);
+}
+
+.line-card{
+height:270px;
+}
+
+svg{
+width:100%;
+height:180px;
+}
+
+/* SECTION */
+
+section{
+padding:120px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:52px;
+font-family:Poppins,sans-serif;
+margin-bottom:60px;
+}
+
+.grid{
+display:grid;
+gap:25px;
+}
+
+.about-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.project-grid{
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+}
+
+.project{
+background:white;
+border-radius:25px;
+padding:30px;
+box-shadow:0 10px 25px rgba(0,0,0,.04);
+transition:.3s;
+}
+
+.project:hover{
+transform:translateY(-10px);
+}
+
+.project-no{
+font-size:40px;
+font-weight:800;
+color:var(--primary);
+}
+
+.badge{
+display:inline-block;
+margin-top:10px;
+background:#ede9fe;
+color:#6d28d9;
+padding:8px 14px;
+border-radius:20px;
+font-size:13px;
+font-weight:600;
+}
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
+}
+
+.skill{
+padding:15px 20px;
+background:white;
+border-radius:50px;
+font-weight:600;
+}
+
+.timeline{
+display:grid;
+gap:20px;
+max-width:900px;
+margin:auto;
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+}
+
+.contact p{
+margin:10px 0;
+}
+
+/* FOOTER */
+
+footer{
+padding:70px 20px;
+text-align:center;
+background:#e9ddff;
+}
+
+footer h2{
+margin-bottom:15px;
+}
+
+/* MOBILE */
+
+@media(max-width:1000px){
+
+.hero{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:58px;
+}
+
+.subtitle{
+font-size:22px;
+}
+
+.about-grid{
+grid-template-columns:1fr;
+}
+
+.nav-links{
+display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="container navbar">
+
+<div class="logo">Sowmiya T ✦</div>
+
+<div class="nav-links">
+#aboutAbout</a>
+#projectsWork</a>
+#skillsSkills</a>
+#contactContact</a>
+</div>
+
+</div>
+</nav>
+
+<div class="container">
+
+<section class="hero">
+
+<div>
+
+<h1>
+VISUAL DESIGNER<br>
+<span class="highlight">DATA VISUALIZATION</span><br>
+DATA ANALYST
+</h1>
+
+<p class="subtitle">
+Turning complex data into clear, meaningful and visually engaging experiences.
+</p>
+
+#projects
+View Projects →
+</a>
+
+</div>
+
+<div class="dashboard">
+
+<div class="row">
+
+<div class="card">
+<h4>EXPERIENCE</h4>
+<div class="metric">2+</div>
+<p>Years</p>
+</div>
+
+<div class="card">
+<h4>PROJECTS</h4>
+<div class="metric">5+</div>
+<p>Dashboards</p>
+</div>
+
+</div>
+
+<div class="card chart-card">
+
+<h4>HEALTHCARE RECORDS ANALYZED</h4>
+<div class="metric">18K+</div>
+
+<div class="bars">
+<div class="bar" style="height:40%"></div>
+<div class="bar" style="height:70%"></div>
+<div class="bar" style="height:55%"></div>
+<div class="bar" style="height:90%"></div>
+<div class="bar" style="height:100%"></div>
+</div>
+
+</div>
+
+<div class="card line-card">
+
+<h4>PERFORMANCE TREND</h4>
+
+<svg viewBox="0 0 600 200">
+
+<path
+d="M0 140 C70 100,120 120,180 90 S300 70,360 100 S450 40,600 60"
+fill="none"
+stroke="#7C3AED"
+stroke-width="6"
+/>
+
+</svg>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<section id="about">
+
+<div class="container">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="grid about-grid">
+
+<div class="card">
+
+<h3>Hello, I'm Sowmiya.</h3>
+<br>
+
+<p>
+I’m a Visual Designer and Data Analyst with experience in healthcare operations, dashboard design, reporting and analytics.
+My goal is to make complex information easier to understand through thoughtful design and meaningful visualizations.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Education</h3>
+<br>
+
+<p><strong>B.E Electronics & Communication Engineering</strong></p>
+<p>M.I.E.T Engineering College, Trichy</p>
+<p>2019 – 2023</p>
+<p>CGPA: 8.94</p>
+
+<br>
+
+<p>
+Understand → Analyze → Design → Visualize → Improve
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<div class="container">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills">
+
+<span class="skill">Power BI</span>
+<span class="skill">SQL</span>
+<span class="skill">Python</span>
+<span class="skill">Excel</span>
+<span class="skill">Figma</span>
+<span class="skill">UI/UX</span>
+<span class="skill">Data Visualization</span>
+<span class="skill">Canva</span>
+<span class="skill">Tableau</span>
+<span class="skill">DAX</span>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<div class="container">
+
+<h2 class="section-title">Selected Work</h2>
+
+<div class="grid project-grid">
+
+<div class="project">
+<div class="project-no">01</div>
+<h3>Healthcare Revenue Cycle Dashboard</h3>
+<div class="badge">Power BI • SQL • DAX</div>
+</div>
+
+<div class="project">
+<div class="project-no">02</div>
+<h3>Claims & Denial Analysis</h3>
+<div class="badge">Power BI • SQL</div>
+</div>
+
+<div class="project">
+<div class="project-no">03</div>
+<h3>Healthcare Operations Dashboard</h3>
+<div class="badge">Power BI • Excel</div>
+</div>
+
+<div class="project">
+<div class="project-no">04</div>
+<h3>E-Commerce Sales Dashboard</h3>
+<div class="badge">Power BI • DAX</div>
+</div>
+
+<div class="project">
+<div class="project-no">05</div>
+<h3>Executive KPI Dashboard</h3>
+<div class="badge">Figma • Power BI</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">Experience</h2>
+
+<div class="timeline">
+
+<div class="card">
+<h3>Data Analyst • Omega Healthcare</h3>
+<p>May 2024 – Present</p>
+</div>
+
+<div class="card">
+<h3>Service Delivery Associate / Project Coordination • QR Solutions</h3>
+<p>Dec 2023 – Mar 2024</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="container contact">
+
+<h2 class="section-title">Let's Connect</h2>
+
+<p>Have a project, opportunity or idea?</p>
+<p>Let's create something meaningful.</p>
+
+<br>
+
+<p><strong>LinkedIn</strong></p>
+<p>linkedin.com/in/sowmiya-tamizhamudhan-2971b4192</p>
+
+<br>
+
+<p><strong>Location</strong></p>
+<p>Bangalore, Karnataka, India</p>
+
+<br>
+
+<p><strong>Email</strong></p>
+<p>your-email@example.com</p>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>Sowmiya Tamizhamudhan</h2>
+
+<p>Visual Designer • Data Visualization • Data Analyst</p>
+
+<br>
+
+<p>
+Designing clarity through data and visual thinking.
+</p>
+
+</footer>
+
+</body>
+</html>
