@@ -1,968 +1,380 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sowmiya T | UX/UI Designer</title>
 
-    <title>Sowmiya Tamizhamudhan | Visual Designer</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
 
-    <meta name="description"
-        content="Portfolio of Sowmiya Tamizhamudhan — Visual Designer, Data Visualization & UI/UX Designer.">
+:root {
+  --purple: #7655d9;
+  --dark: #211b35;
+  --light: #f7f5fc;
+  --muted: #777187;
+}
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet">
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #fff;
+  color: var(--dark);
+  line-height: 1.6;
+}
 
-    <!-- Icons -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+.container {
+  width: min(1100px, 90%);
+  margin: auto;
+}
 
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+}
 
-    <link rel="stylesheet" href="style.css">
+.logo {
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.logo span { color: var(--purple); }
+
+nav ul {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--dark);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+nav a:hover { color: var(--purple); }
+
+.hero {
+  background: var(--light);
+  border-radius: 25px;
+  padding: 90px 9%;
+  margin: 25px 0 90px;
+}
+
+.tag {
+  color: var(--purple);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 65px);
+  line-height: 1.15;
+  margin: 20px 0;
+  max-width: 750px;
+}
+
+.hero h1 span { color: var(--purple); }
+
+.hero p {
+  color: var(--muted);
+  max-width: 600px;
+  font-size: 17px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--purple);
+  color: white;
+  padding: 13px 25px;
+  border-radius: 9px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 28px;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: var(--dark);
+  transform: translateY(-3px);
+}
+
+section { padding: 55px 0; }
+
+.section-title {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.section-desc {
+  color: var(--muted);
+  margin-bottom: 35px;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.project {
+  border: 1px solid #eeeaf5;
+  border-radius: 17px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.project:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px #211b3512;
+}
+
+.project-image {
+  height: 230px;
+  background: #eeeaf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-content { padding: 25px; }
+
+.project-content h3 {
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+
+.project-content p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.skill {
+  background: var(--light);
+  border: 1px solid #eeeaf5;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.about-box {
+  background: var(--light);
+  padding: 35px;
+  border-radius: 17px;
+}
+
+.about-box p { color: var(--muted); }
+
+.contact {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 65px 20px;
+  border-radius: 20px;
+  margin: 50px auto;
+}
+
+.contact p {
+  color: #d2cde0;
+  margin-top: 12px;
+}
+
+.contact .btn {
+  background: white;
+  color: var(--dark);
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media(max-width:700px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav ul {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero { padding: 60px 7%; }
+
+  .projects { grid-template-columns: 1fr; }
+
+  .section-title { font-size: 28px; }
+}
+</style>
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<div class="container">
 
-<header class="navbar">
+<nav>
+  <div class="logo">Sowmiya<span>.</span></div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-    <div class="logo">
-        ST<span>.</span>
-    </div>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <a class="resume-btn" href="resume.pdf" target="_blank">
-        Resume <i class="fa-solid fa-arrow-up-right-from-square"></i>
-    </a>
-
+<header class="hero" id="home">
+  <div class="tag">UX/UI Designer · Visual Designer</div>
+  <h1>Designing digital experiences that are <span>simple & meaningful.</span></h1>
+  <p>
+    Hi, I'm Sowmiya. I create intuitive user interfaces,
+    engaging digital experiences and clean data visualizations.
+  </p>
+  <a href="#projects" class="btn">Explore My Work →</a>
 </header>
 
-
-<!-- ================= HERO ================= -->
-
-<section id="home" class="hero">
-
-    <div class="hero-left">
-
-        <div class="available">
-            <span></span>
-            Open to opportunities
-        </div>
-
-        <p class="small-title">HELLO, I'M</p>
-
-        <h1>
-            Sowmiya<br>
-            <span>Tamizhamudhan.</span>
-        </h1>
-
-        <h2>
-            Visual Designer <b>×</b> Data Visualization
-        </h2>
-
-        <p class="hero-description">
-            I transform complex information and datasets into
-            clear, structured and visually engaging digital
-            experiences.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#projects" class="primary-btn">
-                Explore My Work
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
-
-            <a href="#contact" class="secondary-btn">
-                Let's Connect
-            </a>
-
-        </div>
-
-        <div class="social-links">
-
-            <a href="https://linkedin.com/in/sowmiya-tamizhamudhan-2971b4192"
-                target="_blank">
-                <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-
-            <a href="https://github.com/sowmiya253"
-                target="_blank">
-                <i class="fa-brands fa-github"></i>
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <!-- Dashboard visual -->
-
-    <div class="hero-right">
-
-        <div class="dashboard-card">
-
-            <div class="dashboard-header">
-
-                <div>
-                    <p>DATA OVERVIEW</p>
-                    <h3>Performance Dashboard</h3>
-                </div>
-
-                <div class="dashboard-icon">
-                    <i class="fa-solid fa-chart-simple"></i>
-                </div>
-
-            </div>
-
-
-            <div class="mini-kpis">
-
-                <div>
-                    <span>Revenue</span>
-                    <strong>$84.2K</strong>
-                    <small>+18.4%</small>
-                </div>
-
-                <div>
-                    <span>Claims</span>
-                    <strong>2,840</strong>
-                    <small>+12.1%</small>
-                </div>
-
-                <div>
-                    <span>Recovery</span>
-                    <strong>76%</strong>
-                    <small>+8.6%</small>
-                </div>
-
-            </div>
-
-            <div class="chart-container">
-                <canvas id="heroChart"></canvas>
-            </div>
-
-            <div class="chart-labels">
-                <span>Jan</span>
-                <span>Feb</span>
-                <span>Mar</span>
-                <span>Apr</span>
-                <span>May</span>
-                <span>Jun</span>
-            </div>
-
-        </div>
-
-
-        <div class="floating-card card-one">
-            <i class="fa-solid fa-layer-group"></i>
-            <div>
-                <strong>Visual Design</strong>
-                <span>Figma • UI/UX</span>
-            </div>
-        </div>
-
-
-        <div class="floating-card card-two">
-            <i class="fa-solid fa-chart-pie"></i>
-            <div>
-                <strong>Data Visualization</strong>
-                <span>Power BI • DAX</span>
-            </div>
-        </div>
-
-    </div>
-
+<section id="about">
+  <h2 class="section-title">About Me</h2>
+  <p class="section-desc">A little about my design journey.</p>
+  <div class="about-box">
+    <p>
+      I'm a UX/UI and Visual Designer with an Electronics and
+      Communication Engineering background. I enjoy transforming
+      ideas into clear, user-friendly digital experiences.
+      My interests include interface design, dashboards,
+      visual storytelling and data visualization.
+    </p>
+  </div>
 </section>
 
+<section id="projects">
+  <h2 class="section-title">Featured Projects</h2>
+  <p class="section-desc">A selection of my design work.</p>
 
-<!-- ================= MARQUEE ================= -->
+  <div class="projects">
 
-<div class="marquee">
+    <article class="project">
+      <div class="project-image">
+        <img src="images/smartprint.png"
+             alt="SmartPrint printer touchscreen UI"
+             onerror="this.style.display='none';this.parentElement.textContent='SmartPrint UI Design';">
+      </div>
+      <div class="project-content">
+        <h3>SmartPrint – Printer UI</h3>
+        <p>
+          A touchscreen printer interface featuring copy,
+          scan, print, settings and maintenance workflows.
+        </p>
+        <p><strong>Tool:</strong> Figma</p>
+      </div>
+    </article>
 
-    <div>
-        FIGMA
-        <span>✦</span>
-        POWER BI
-        <span>✦</span>
-        DATA VISUALIZATION
-        <span>✦</span>
-        UI/UX
-        <span>✦</span>
-        SQL
-        <span>✦</span>
-        VISUAL STORYTELLING
-        <span>✦</span>
-    </div>
+    <article class="project">
+      <div class="project-image">
+        <img src="images/stitch-grid.png"
+             alt="Stitch and Grid ecommerce UI"
+             onerror="this.style.display='none';this.parentElement.textContent='Stitch & Grid';">
+      </div>
+      <div class="project-content">
+        <h3>Stitch & Grid – E-commerce</h3>
+        <p>
+          A fashion shopping experience with product listings,
+          filters, wishlist, cart and checkout screens.
+        </p>
+        <p><strong>Tool:</strong> Adobe XD</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="project-image">
+        <img src="images/insight-ai.png"
+             alt="InsightAI analytics dashboard"
+             onerror="this.style.display='none';this.parentElement.textContent='InsightAI Dashboard';">
+      </div>
+      <div class="project-content">
+        <h3>InsightAI – Analytics Dashboard</h3>
+        <p>
+          A SaaS analytics dashboard concept with KPI cards,
+          charts and data visualization.
+        </p>
+        <p><strong>Tool:</strong> Figma</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="skills">
+  <h2 class="section-title">Skills & Tools</h2>
+  <p class="section-desc">Tools I use to bring ideas to life.</p>
+  <div class="skills">
+    <span class="skill">Figma</span>
+    <span class="skill">Adobe XD</span>
+    <span class="skill">UI Design</span>
+    <span class="skill">UX Research</span>
+    <span class="skill">Wireframing</span>
+    <span class="skill">Prototyping</span>
+    <span class="skill">Power BI</span>
+    <span class="skill">SQL</span>
+    <span class="skill">Excel</span>
+    <span class="skill">Python</span>
+    <span class="skill">Data Visualization</span>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <h2>Let's Work Together</h2>
+    <p>Have a project or opportunity? I'd love to connect.</p>
+    <a href="mailto:YOUR_EMAIL@example.com" class="btn">
+      Contact Me
+    </a>
+    <p>
+      <a href="https://www.linkedin.com/in/sowmiya-tamizhamudhan-2971b4192"
+         style="color:white">LinkedIn</a>
+      &nbsp; · &nbsp;
+      <a href="https://github.com/sowmiya253"
+         style="color:white">GitHub</a>
+    </p>
+  </div>
+</section>
 
 </div>
 
-
-<!-- ================= ABOUT ================= -->
-
-<section id="about" class="section">
-
-    <div class="section-heading">
-
-        <p>01 — ABOUT ME</p>
-
-        <h2>
-            Where analytical thinking
-            meets <span>visual design.</span>
-        </h2>
-
-    </div>
-
-
-    <div class="about-grid">
-
-        <div class="about-text">
-
-            <p>
-                I'm a Visual Designer and Data Analyst with a
-                background in Electronics & Communication Engineering.
-            </p>
-
-            <p>
-                My work sits at the intersection of design,
-                data and technology. I enjoy taking complex
-                information and turning it into experiences
-                that are easier to understand and interact with.
-            </p>
-
-            <p>
-                From healthcare analytics dashboards to
-                UI prototypes, I focus on hierarchy, clarity,
-                typography and meaningful visual communication.
-            </p>
-
-        </div>
-
-
-        <div class="about-stats">
-
-            <div class="stat-card">
-                <strong>8.94</strong>
-                <span>Engineering CGPA</span>
-            </div>
-
-            <div class="stat-card">
-                <strong>04+</strong>
-                <span>Analytics Projects</span>
-            </div>
-
-            <div class="stat-card">
-                <strong>10+</strong>
-                <span>Design & Analytics Tools</span>
-            </div>
-
-            <div class="stat-card">
-                <strong>2023</strong>
-                <span>Engineering Graduate</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= PROJECTS ================= -->
-
-<section id="projects" class="section projects-section">
-
-    <div class="section-heading">
-
-        <p>02 — SELECTED WORK</p>
-
-        <h2>
-            Turning data into
-            <span>visual stories.</span>
-        </h2>
-
-        <p class="section-description">
-            A selection of dashboard, analytics and visual
-            design projects focused on clarity and usability.
-        </p>
-
-    </div>
-
-
-    <div class="projects-grid">
-
-
-        <!-- PROJECT 1 -->
-
-        <article class="project-card featured">
-
-            <div class="project-top">
-
-                <span class="project-number">01</span>
-
-                <span class="project-type">
-                    HEALTHCARE ANALYTICS
-                </span>
-
-            </div>
-
-
-            <div class="project-visual healthcare-dashboard">
-
-                <div class="dashboard-title">
-                    AR PERFORMANCE
-                </div>
-
-                <div class="dashboard-kpis">
-
-                    <div>
-                        <span>Outstanding AR</span>
-                        <b>$1.24M</b>
-                    </div>
-
-                    <div>
-                        <span>Collections</span>
-                        <b>$842K</b>
-                    </div>
-
-                    <div>
-                        <span>Recovery</span>
-                        <b>76.4%</b>
-                    </div>
-
-                </div>
-
-                <div class="bars">
-
-                    <span style="height:45%"></span>
-                    <span style="height:68%"></span>
-                    <span style="height:54%"></span>
-                    <span style="height:82%"></span>
-                    <span style="height:71%"></span>
-                    <span style="height:92%"></span>
-                    <span style="height:76%"></span>
-
-                </div>
-
-                <div class="aging">
-
-                    <div>
-                        <span>0–30</span>
-                        <b>42%</b>
-                    </div>
-
-                    <div>
-                        <span>31–60</span>
-                        <b>28%</b>
-                    </div>
-
-                    <div>
-                        <span>61–90</span>
-                        <b>18%</b>
-                    </div>
-
-                    <div>
-                        <span>90+</span>
-                        <b>12%</b>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-content">
-
-                <h3>
-                    Healthcare Revenue Cycle &
-                    AR Performance Dashboard
-                </h3>
-
-                <p>
-                    Interactive Power BI dashboard designed
-                    to analyze Accounts Receivable performance,
-                    aging distribution and collection trends.
-                </p>
-
-                <div class="tags">
-
-                    <span>Power BI</span>
-                    <span>DAX</span>
-                    <span>SQL</span>
-                    <span>Dashboard Design</span>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- PROJECT 2 -->
-
-        <article class="project-card">
-
-            <div class="project-top">
-
-                <span class="project-number">02</span>
-
-                <span class="project-type">
-                    HEALTHCARE DATA
-                </span>
-
-            </div>
-
-
-            <div class="project-visual denial-dashboard">
-
-                <div class="donut">
-                    <div>64%</div>
-                </div>
-
-                <div class="legend">
-
-                    <span>
-                        <i></i>
-                        Eligibility
-                    </span>
-
-                    <span>
-                        <i></i>
-                        Authorization
-                    </span>
-
-                    <span>
-                        <i></i>
-                        Coding
-                    </span>
-
-                    <span>
-                        <i></i>
-                        Other
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-content">
-
-                <h3>
-                    Healthcare Claims &
-                    Denial Analysis
-                </h3>
-
-                <p>
-                    Data analysis dashboard identifying
-                    denial patterns, payer trends and
-                    recovery opportunities.
-                </p>
-
-                <div class="tags">
-
-                    <span>SQL</span>
-                    <span>Power BI</span>
-                    <span>Excel</span>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- PROJECT 3 -->
-
-        <article class="project-card">
-
-            <div class="project-top">
-
-                <span class="project-number">03</span>
-
-                <span class="project-type">
-                    OPERATIONS
-                </span>
-
-            </div>
-
-
-            <div class="project-visual operations-dashboard">
-
-                <div class="operation-number">
-                    <small>TOTAL CASES</small>
-                    <strong>12,480</strong>
-                </div>
-
-                <div class="operation-chart">
-
-                    <span style="height:30%"></span>
-                    <span style="height:60%"></span>
-                    <span style="height:45%"></span>
-                    <span style="height:78%"></span>
-                    <span style="height:65%"></span>
-                    <span style="height:88%"></span>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-content">
-
-                <h3>
-                    Healthcare Operations Dashboard
-                </h3>
-
-                <p>
-                    Visual dashboard communicating workload,
-                    pending cases, service volume and
-                    operational performance.
-                </p>
-
-                <div class="tags">
-
-                    <span>Power BI</span>
-                    <span>Excel</span>
-                    <span>Data Viz</span>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- PROJECT 4 -->
-
-        <article class="project-card">
-
-            <div class="project-top">
-
-                <span class="project-number">04</span>
-
-                <span class="project-type">
-                    BUSINESS ANALYTICS
-                </span>
-
-            </div>
-
-
-            <div class="project-visual superstore-dashboard">
-
-                <div class="sales-number">
-                    <small>SALES</small>
-                    <strong>$1.28M</strong>
-                </div>
-
-                <div class="sales-line"></div>
-
-                <div class="sales-points">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-
-            </div>
-
-
-            <div class="project-content">
-
-                <h3>
-                    Superstore Sales Analysis
-                </h3>
-
-                <p>
-                    Interactive business intelligence dashboard
-                    analyzing sales, profit, discount and
-                    regional performance.
-                </p>
-
-                <div class="tags">
-
-                    <span>Power BI</span>
-                    <span>DAX</span>
-                    <span>Data Storytelling</span>
-
-                </div>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- ================= SKILLS ================= -->
-
-<section id="skills" class="section">
-
-    <div class="section-heading">
-
-        <p>03 — SKILLS & TOOLS</p>
-
-        <h2>
-            My creative &
-            <span>analytical toolkit.</span>
-        </h2>
-
-    </div>
-
-
-    <div class="skills-grid">
-
-
-        <div class="skill-card">
-
-            <div class="skill-icon">
-                <i class="fa-solid fa-pen-nib"></i>
-            </div>
-
-            <h3>Visual Design</h3>
-
-            <p>
-                Creating visual systems that balance
-                aesthetics, hierarchy and usability.
-            </p>
-
-            <div class="skill-list">
-                <span>Figma</span>
-                <span>Photoshop</span>
-                <span>Illustrator</span>
-                <span>Canva</span>
-            </div>
-
-        </div>
-
-
-        <div class="skill-card">
-
-            <div class="skill-icon">
-                <i class="fa-solid fa-chart-column"></i>
-            </div>
-
-            <h3>Data Visualization</h3>
-
-            <p>
-                Transforming datasets into dashboards
-                and visual stories that communicate insights.
-            </p>
-
-            <div class="skill-list">
-                <span>Power BI</span>
-                <span>Tableau</span>
-                <span>DAX</span>
-                <span>Excel</span>
-            </div>
-
-        </div>
-
-
-        <div class="skill-card">
-
-            <div class="skill-icon">
-                <i class="fa-solid fa-code"></i>
-            </div>
-
-            <h3>Data & Programming</h3>
-
-            <p>
-                Working with structured data using
-                analytical and programming tools.
-            </p>
-
-            <div class="skill-list">
-                <span>SQL</span>
-                <span>Python</span>
-                <span>Pandas</span>
-                <span>NumPy</span>
-            </div>
-
-        </div>
-
-
-        <div class="skill-card">
-
-            <div class="skill-icon">
-                <i class="fa-solid fa-users"></i>
-            </div>
-
-            <h3>UX & Collaboration</h3>
-
-            <p>
-                Combining user-centered design with
-                collaborative project workflows.
-            </p>
-
-            <div class="skill-list">
-                <span>Wireframing</span>
-                <span>Prototyping</span>
-                <span>Jira</span>
-                <span>GitHub</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= EXPERIENCE ================= -->
-
-<section id="experience" class="section experience-section">
-
-    <div class="section-heading">
-
-        <p>04 — EXPERIENCE</p>
-
-        <h2>
-            Experience that shapes
-            <span>how I design.</span>
-        </h2>
-
-    </div>
-
-
-    <div class="timeline">
-
-
-        <div class="timeline-item">
-
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-date">
-                MAY 2024 — PRESENT
-            </div>
-
-            <div class="timeline-content">
-
-                <h3>Data Analyst</h3>
-
-                <h4>Omega Healthcare · India</h4>
-
-                <p>
-                    Working with healthcare revenue-cycle
-                    information and structured operational data.
-                    Analyzing accounts, identifying discrepancies
-                    and supporting healthcare workflows.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-date">
-                DEC 2023 — MAR 2024
-            </div>
-
-            <div class="timeline-content">
-
-                <h3>
-                    Service Delivery Associate /
-                    Project Coordination
-                </h3>
-
-                <h4>QR Solutions · India</h4>
-
-                <p>
-                    Supported project delivery activities,
-                    coordinated requirements and worked with
-                    Salesforce-related business workflows.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-date">
-                2019 — 2023
-            </div>
-
-            <div class="timeline-content">
-
-                <h3>
-                    B.E. Electronics &
-                    Communication Engineering
-                </h3>
-
-                <h4>M.I.E.T Engineering College · Trichy</h4>
-
-                <p>
-                    Graduated with a CGPA of 8.94, developing
-                    a foundation in engineering, analytical
-                    thinking and technology.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= DESIGN PROCESS ================= -->
-
-<section class="section process-section">
-
-    <div class="section-heading">
-
-        <p>05 — MY APPROACH</p>
-
-        <h2>
-            From complexity
-            <span>to clarity.</span>
-        </h2>
-
-    </div>
-
-
-    <div class="process-grid">
-
-        <div class="process-card">
-            <span>01</span>
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <h3>Understand</h3>
-            <p>
-                Understand the problem, audience,
-                requirements and data.
-            </p>
-        </div>
-
-        <div class="process-card">
-            <span>02</span>
-            <i class="fa-solid fa-diagram-project"></i>
-            <h3>Structure</h3>
-            <p>
-                Organize information using hierarchy,
-                flows and meaningful relationships.
-            </p>
-        </div>
-
-        <div class="process-card">
-            <span>03</span>
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-            <h3>Design</h3>
-            <p>
-                Create clean visual systems, interfaces
-                and dashboards.
-            </p>
-        </div>
-
-        <div class="process-card">
-            <span>04</span>
-            <i class="fa-solid fa-chart-line"></i>
-            <h3>Communicate</h3>
-            <p>
-                Turn insights into visual stories
-                that users can understand quickly.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section id="contact" class="contact-section">
-
-    <div class="contact-inner">
-
-        <p class="contact-label">
-            HAVE A PROJECT IN MIND?
-        </p>
-
-        <h2>
-            Let's create something
-            <span>meaningful.</span>
-        </h2>
-
-        <p>
-            I'm interested in visual design,
-            data visualization, UI/UX and
-            dashboard-focused opportunities.
-        </p>
-
-
-        <a class="email-btn"
-            href="mailto:sowmiyatamizhamudhan@gmail.com">
-
-            <i class="fa-solid fa-envelope"></i>
-
-            sowmiyatamizhamudhan@gmail.com
-
-        </a>
-
-
-        <div class="contact-socials">
-
-            <a href="https://linkedin.com/in/sowmiya-tamizhamudhan-2971b419/"
-                target="_blank">
-                LinkedIn
-            </a>
-
-            <a href="https://github.com/sowmiya253"
-                target="_blank">
-                GitHub
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
 <footer>
-
-    <p>
-        © 2026 Sowmiya Tamizhamudhan
-    </p>
-
-    <p>
-        Visual Designer × Data Visualization
-    </p>
-
+  © 2026 Sowmiya T. Designed with care.
 </footer>
-
-
-<script src="script.js"></script>
 
 </body>
 </html>
-```
